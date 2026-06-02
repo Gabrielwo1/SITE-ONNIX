@@ -87,23 +87,18 @@
     .btn-ghost { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: rgba(255,255,255,0.75); font-size: 15px; font-weight: 500; padding: 14px 24px; border-radius: 50px; text-decoration: none; border: 1px solid rgba(255,255,255,0.18); transition: border-color 0.2s, color 0.2s; }
     .btn-ghost:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
     /* Hero right ERP mockup */
-    .hero-right { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
-    .hero-mockup { width: 100%; max-width: 620px; height: 360px; background: #060d1a; border-radius: 14px; border: 1px solid rgba(255,255,255,0.08); overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.55); }
-    .m-bar { height: 30px; background: #040a14; display: flex; align-items: center; padding: 0 12px; gap: 7px; border-bottom: 1px solid rgba(255,255,255,0.05); }
-    .m-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+    .hero-right { display: flex; flex-direction: column; align-items: flex-end; gap: 16px; }
+    .hero-mockup { width: 100%; max-width: 640px; border-radius: 16px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.06); }
+    .hero-mockup img { width: 100%; height: auto; display: block; }
+    /* m-* classes kept for CTA screens mockup */
+    .m-bar { height: 22px; display: flex; align-items: center; padding: 0 10px; gap: 6px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .m-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
     .m-r { background: #ff5f57; } .m-y { background: #ffbd2e; } .m-g { background: #28c840; }
-    .m-title { font-size: 11px; color: rgba(255,255,255,0.28); margin: 0 auto; }
-    .m-body { display: flex; height: calc(100% - 30px); }
-    .m-side { width: 136px; background: #040a14; border-right: 1px solid rgba(255,255,255,0.05); padding: 10px 0; flex-shrink: 0; }
-    .m-nav { padding: 7px 14px; font-size: 11px; color: rgba(255,255,255,0.33); }
-    .m-nav.on { background: rgba(37,99,235,0.18); color: #60a5fa; border-left: 2px solid var(--blue); padding-left: 12px; }
-    .m-content { flex: 1; padding: 12px; overflow: hidden; }
-    .m-toolbar { display: flex; gap: 8px; margin-bottom: 10px; }
-    .m-tbtn { font-size: 10px; background: rgba(37,99,235,0.15); color: #60a5fa; border: 1px solid rgba(37,99,235,0.28); border-radius: 4px; padding: 4px 10px; }
-    .m-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin-bottom: 10px; }
+    .m-title { font-size: 10px; color: rgba(255,255,255,0.28); margin: 0 auto; }
+    .m-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 6px; margin-bottom: 8px; }
     .m-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; padding: 8px; }
     .m-card-label { font-size: 9px; color: rgba(255,255,255,0.28); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
-    .m-card-val { font-size: 15px; font-weight: 700; color: var(--white); letter-spacing: -0.5px; }
+    .m-card-val { font-size: 13px; font-weight: 700; color: var(--white); letter-spacing: -0.5px; }
     .m-card-val.g { color: #34d399; } .m-card-val.r { color: #f87171; } .m-card-val.b { color: #60a5fa; }
     .m-table { width: 100%; border-collapse: collapse; }
     .m-table th { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: rgba(255,255,255,0.22); padding: 5px 6px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: left; }
@@ -433,40 +428,7 @@
       </div>
       <div class="hero-right">
         <div class="hero-mockup">
-          <div class="m-bar">
-            <div class="m-dot m-r"></div><div class="m-dot m-y"></div><div class="m-dot m-g"></div>
-            <span class="m-title">ONNIX ERP · Financeiro</span>
-          </div>
-          <div class="m-body">
-            <div class="m-side">
-              <div class="m-nav on">Dashboard</div>
-              <div class="m-nav">Financeiro</div>
-              <div class="m-nav">Faturamento</div>
-              <div class="m-nav">Estoque</div>
-              <div class="m-nav">Fiscal</div>
-              <div class="m-nav">NF-e</div>
-              <div class="m-nav">Logística</div>
-              <div class="m-nav">RH</div>
-              <div class="m-nav">Relatórios</div>
-            </div>
-            <div class="m-content">
-              <div class="m-toolbar"><span class="m-tbtn">Mai 2025</span><span class="m-tbtn">Exportar</span></div>
-              <div class="m-grid">
-                <div class="m-card"><div class="m-card-label">Caixa</div><div class="m-card-val g">R$&nbsp;84k</div></div>
-                <div class="m-card"><div class="m-card-label">A Receber</div><div class="m-card-val b">2,1M</div></div>
-                <div class="m-card"><div class="m-card-label">A Pagar</div><div class="m-card-val r">-743k</div></div>
-                <div class="m-card"><div class="m-card-label">NF-e</div><div class="m-card-val">1.847</div></div>
-              </div>
-              <table class="m-table">
-                <tr><th>Descrição</th><th>Venc.</th><th>Valor</th><th>Status</th></tr>
-                <tr><td>Pedido #4821</td><td>12/05</td><td class="pos">+R$18.400</td><td class="hl">Recebido</td></tr>
-                <tr><td>Fornec. Aço Sul</td><td>15/05</td><td class="neg">-R$9.200</td><td>Pendente</td></tr>
-                <tr><td>Pedido #4835</td><td>18/05</td><td class="pos">+R$31.750</td><td class="hl">Recebido</td></tr>
-                <tr><td>Aluguel Galpão</td><td>20/05</td><td class="neg">-R$4.800</td><td>Pendente</td></tr>
-                <tr><td>Pedido #4844</td><td>22/05</td><td class="pos">+R$12.600</td><td>Aberto</td></tr>
-              </table>
-            </div>
-          </div>
+          <img src="images/erp-screenshot.png" alt="ONNIX ERP — tela do sistema">
         </div>
         <div class="hero-stat-cards">
           <div class="hsc">
