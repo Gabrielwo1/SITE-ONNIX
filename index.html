@@ -43,9 +43,8 @@
       border: 1px solid rgba(255,255,255,0.1); border-radius: 50px;
       padding: 8px 8px 8px 24px; white-space: nowrap;
     }
-    .nav-logo { font-size: 17px; font-weight: 700; color: var(--white); text-decoration: none; display: flex; align-items: center; gap: 8px; margin-right: 24px; letter-spacing: -0.3px; }
-    .nav-logo-mark { width: 22px; height: 22px; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-    .nav-logo-mark svg { width: 10px; height: 10px; fill: white; }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; margin-right: 24px; }
+    .nav-logo img { height: 28px; width: auto; display: block; }
     .nav-sep { width: 1px; height: 18px; background: rgba(255,255,255,0.12); margin-right: 24px; flex-shrink: 0; }
     .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; margin-right: 24px; }
     .nav-links a { font-size: 14px; color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s; }
@@ -315,8 +314,8 @@
     /* ── FOOTER ── */
     footer { background: var(--dark-navy); border-top: 1px solid rgba(255,255,255,0.06); padding: 64px 0 32px; }
     .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 32px; }
-    .foot-logo { font-size: 18px; font-weight: 700; color: var(--white); text-decoration: none; display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
-    .foot-logo-mark { width: 22px; height: 22px; background: var(--blue); border-radius: 50%; flex-shrink: 0; }
+    .foot-logo { text-decoration: none; display: inline-flex; align-items: center; margin-bottom: 14px; }
+    .foot-logo img { height: 28px; width: auto; display: block; }
     .foot-desc { font-size: 13px; line-height: 1.75; color: rgba(255,255,255,0.36); max-width: 250px; }
     .foot-col-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.26); margin-bottom: 18px; }
     .foot-links { list-style: none; display: flex; flex-direction: column; gap: 11px; }
@@ -378,8 +377,7 @@
 <!-- ═══════════════════════ NAV ═══════════════════════ -->
 <nav>
   <a href="#" class="nav-logo">
-    <span class="nav-logo-mark"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="3.5" fill="white"/></svg></span>
-    onnix
+    <img src="images/logo.png" alt="ONNIX Sistemas">
   </a>
   <div class="nav-sep"></div>
   <ul class="nav-links">
@@ -1041,8 +1039,7 @@
     <div class="foot-grid">
       <div>
         <a href="#" class="foot-logo">
-          <div class="foot-logo-mark"></div>
-          onnix
+          <img src="images/logo.png" alt="ONNIX Sistemas">
         </a>
         <p class="foot-desc">ERP brasileiro pra quem quer crescer com clareza. Tecnologia de ponta, suporte humano, simplicidade em forma de software.</p>
       </div>
