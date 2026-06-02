@@ -58,10 +58,12 @@
     .nav-hamburger.open span:nth-child(2) { opacity: 0; }
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
     /* Mobile drawer */
-    .mobile-menu { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(7,13,27,0.97); backdrop-filter: blur(20px); flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+    .mobile-menu { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(7,13,27,0.97); backdrop-filter: blur(20px); flex-direction: column; align-items: stretch; justify-content: center; gap: 0; padding: 0 32px; }
     .mobile-menu.open { display: flex; }
-    .mobile-menu a { font-size: 26px; font-weight: 700; color: var(--white); text-decoration: none; }
-    .mobile-menu a:hover { color: var(--blue-light); }
+    .mobile-menu a:not(.btn-primary) { font-size: 22px; font-weight: 700; color: rgba(255,255,255,0.85); text-decoration: none; padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.07); text-align: center; }
+    .mobile-menu a:not(.btn-primary):first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+    .mobile-menu a:not(.btn-primary):hover { color: var(--white); }
+    .mobile-menu .btn-primary { align-self: center; margin-top: 32px; font-size: 16px; padding: 15px 36px; }
 
     /* ── HERO ── */
     #hero { position: relative; min-height: 100vh; background: var(--dark-navy); overflow: hidden; display: flex; align-items: flex-end; padding-bottom: 80px; }
@@ -343,23 +345,74 @@
     }
     @media (max-width: 768px) {
       nav { width: calc(100% - 32px); }
-      .nav-links, .nav-sep { display: none; }
+      .nav-links, .nav-sep, .nav-cta { display: none; }
       .nav-hamburger { display: flex; }
       .container { padding: 0 20px; }
+
+      /* Section vertical padding */
+      #hero   { padding-bottom: 56px; }
+      #bento, #showcase, #problems, #benefits, #segments, #quote, #support { padding: 64px 0; }
+      #stats  { padding: 48px 0; }
+      footer  { padding: 48px 0 28px; }
+
+      /* Hero */
+      .hero-inner  { padding-top: 110px; gap: 32px; }
+      .hero-h1     { font-size: 38px; letter-spacing: -1.5px; }
+      .hero-desc   { font-size: 15px; margin-bottom: 28px; }
+      .hero-ctas   { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
+
+      /* Stats */
+      .stats-grid  { grid-template-columns: repeat(2, 1fr); }
+      .stat-item   { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 20px 16px; }
+      .stat-val    { font-size: 44px; letter-spacing: -2.5px; }
+
+      /* Grids → single column */
       .prob-grid   { grid-template-columns: 1fr; }
       .ben-grid    { grid-template-columns: 1fr; }
       .seg-grid    { grid-template-columns: 1fr; }
       .sup-grid    { grid-template-columns: 1fr; }
       .foot-grid   { grid-template-columns: 1fr; }
       .bento-grid  { grid-template-columns: 1fr; }
-      .stats-grid  { grid-template-columns: repeat(2, 1fr); }
-      .stat-item   { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
-      .prob-cta-bar { flex-direction: column; gap: 16px; text-align: center; }
+
+      /* Showcase */
+      .showcase-tabs { gap: 6px; flex-wrap: wrap; }
+      .tab           { font-size: 12px; padding: 7px 12px; }
+      .sc-left       { padding: 24px 20px; }
+      .sc-right      { padding: 20px; }
+
+      /* Problems bar */
+      .prob-cta-bar { flex-direction: column; gap: 16px; text-align: center; padding: 20px 24px; }
+      .prob-cta-bar .btn-dark { width: auto; align-self: center; }
+
+      /* Quote */
+      .quote-card { padding: 24px 20px; }
+      .q-stats    { gap: 14px; }
+
+      /* CTA */
+      .cta-card { padding: 36px 24px; }
+      .cta-h2   { font-size: 30px; }
+
+      /* Footer */
       .foot-bottom { flex-direction: column; gap: 16px; text-align: center; }
-      .cta-card    { padding: 36px 24px; }
-      .hero-inner  { padding-top: 130px; }
-      .showcase-tabs { gap: 6px; }
-      .tab { font-size: 13px; padding: 8px 14px; }
+      .foot-social { justify-content: center; }
+
+      /* Bento intro */
+      .bento-intro { gap: 24px; margin-bottom: 32px; }
+    }
+    @media (max-width: 480px) {
+      nav { top: 12px; padding: 6px 6px 6px 16px; }
+      .nav-logo img { height: 24px; }
+      .hero-h1   { font-size: 32px; letter-spacing: -1px; }
+      .hero-desc { font-size: 14px; line-height: 1.65; }
+      .stat-val  { font-size: 38px; letter-spacing: -2px; }
+      .bc        { padding: 22px; }
+      .ben-card  { padding: 24px; }
+      .seg-card  { padding: 20px; }
+      .bento-h2, .ben-h2, .seg-h2, .quote-h2, .sup-h2, .showcase-h2, .problems-h2 { letter-spacing: -1px; }
+      .cta-card  { padding: 28px 20px; }
+      .cta-h2    { font-size: 26px; }
+      footer     { padding: 40px 0 24px; }
     }
   </style>
 </head>
@@ -371,7 +424,7 @@
   <a href="#bento"    onclick="closeMobile()">Diferenciais</a>
   <a href="#segments" onclick="closeMobile()">Segmentos</a>
   <a href="#support"  onclick="closeMobile()">Suporte</a>
-  <a href="#cta"      onclick="closeMobile()" class="btn-primary" style="font-size:18px; padding:16px 32px; margin-top:8px;">Demonstração ↗</a>
+  <a href="https://wa.me/+554635230622" target="_blank" rel="noopener" onclick="closeMobile()" class="btn-primary">Solicitar demonstração ↗</a>
 </div>
 
 <!-- ═══════════════════════ NAV ═══════════════════════ -->
@@ -386,7 +439,7 @@
     <li><a href="#segments">Segmentos</a></li>
     <li><a href="#support">Suporte</a></li>
   </ul>
-  <a href="#cta" class="nav-cta">Demonstração ↗</a>
+  <a href="https://wa.me/+554635230622" target="_blank" rel="noopener" class="nav-cta">Demonstração ↗</a>
   <button class="nav-hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -417,7 +470,7 @@
           A ONNIX integra a gestão da sua empresa em um sistema modular de ponta a ponta. Comercial, fiscal, financeiro e logística sincronizados — sem mais planilhas soltas, sem retrabalho.
         </p>
         <div class="hero-ctas reveal reveal-delay-3">
-          <a href="#cta" class="btn-primary">
+          <a href="https://wa.me/+554635230622" target="_blank" rel="noopener" class="btn-primary">
             Solicitar demonstração
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -823,7 +876,7 @@
     </div>
     <div class="prob-cta-bar reveal">
       <p>Então você não tem gestão, apenas <em class="em">operação.</em> A ONNIX existe pra mudar isso.</p>
-      <a href="#cta" class="btn-dark">Quero conhecer ↗</a>
+      <a href="https://wa.me/+554635230622" target="_blank" rel="noopener" class="btn-dark">Quero conhecer ↗</a>
     </div>
   </div>
 </section>
@@ -982,7 +1035,7 @@
           <li>Diagnóstico gratuito da sua operação</li>
           <li>Sem compromisso. Sem pressão.</li>
         </ul>
-        <a href="mailto:suporte@onnixsistemas.com.br" class="btn-white">
+        <a href="https://wa.me/+554635230622" target="_blank" rel="noopener" class="btn-white">
           Solicitar demonstração
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
